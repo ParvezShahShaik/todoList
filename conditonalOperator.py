@@ -1,9 +1,27 @@
-user_text = "Enter a todo: "
-
 todos = []
+
 while True:
-    todo = input(user_text)
-    print(todo.capitalize())
-    todos.append(todo)
-    print(todos)
+    user_action = input("Type add, show or exit: ")
+    user_action = user_action.strip()
+
+    match user_action:
+        case 'add':
+            todo = input("Enter a todo: ")
+            todos.append(todo)
+
+        case 'show' | 'display':
+            for item in todos:
+                # CAPITALIZE THE WORD IN THE LIST
+                item = item.title()
+                print(item)
+
+        case 'exit':
+            break
+
+        case _:
+            print("Please select a valid option")
+
+print("Bye!")
+
+
 
