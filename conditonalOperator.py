@@ -1,7 +1,7 @@
 todos = []
 
 while True:
-    user_action = input("Type add, show or exit: ")
+    user_action = input("Type add, edit, show or exit: ")
     user_action = user_action.strip()
 
     match user_action:
@@ -14,6 +14,12 @@ while True:
                 # CAPITALIZE THE WORD IN THE LIST
                 item = item.title()
                 print(item)
+
+        case 'edit':
+            number = int(input("Number of the todo to edit: "))
+            number = number-1
+            new_todo = input("Enter your new todo to add: ")
+            todos[number] = new_todo
 
         case 'exit':
             break
