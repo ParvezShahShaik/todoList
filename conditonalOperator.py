@@ -10,10 +10,10 @@ while True:
             todos.append(todo)
 
         case 'show' | 'display':
-            for item in todos:
+            for index,item in enumerate(todos):
                 # CAPITALIZE THE WORD IN THE LIST
                 item = item.title()
-                print(item)
+                print(index,'-', item)
 
         case 'edit':
             number = int(input("Number of the todo to edit: "))
